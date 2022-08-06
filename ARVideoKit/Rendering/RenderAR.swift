@@ -113,7 +113,7 @@ struct RenderAR {
             guard let buffer = renderedFrame!.buffer else { return nil }
             return buffer;
         } else if view is SCNView {
-            let size = UIScreen.main.bounds.size
+            let size = CGSize(width: 800, height: 800) // UIScreen.main.bounds.size
             var renderedFrame: UIImage?
             pixelsQueue.sync {
                 renderedFrame = renderEngine.snapshot(atTime: self.time, with: size, antialiasingMode: .none)
